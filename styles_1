@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffebee; /* Fondo rosa claro */
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-form {
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.login-form h2 {
+    color: #ff0000; /* Color rojo para el título */
+    margin-bottom: 10px;
+}
+
+.login-form p {
+    color: #ff0000; /* Color rojo para el subtítulo */
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff0000; /* Color rojo para el botón */
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-form button:hover {
+    background-color: #e60000; /* Color rojo más oscuro al pasar el ratón */
+}
+
+.login-form input::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.login-form .icon {
+    position: absolute;
+    margin-top: -35px; /* Ajustar la posición del icono según sea necesario */
+    margin-left: 10px;
+}
+
+input[type="email"]::before,
+input[type="password"]::before,
+input[type="password"]#confirm-password::before {
+    content: '';
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+input[type="email"]::before {
+    background-image: url('C:\Users\gusga\Documents\TEC\Topicos avanzados de programacion\Inicio_de_seisión\email-icon.png'); /* Icono de correo electrónico */
+}
+
+input[type="password"]::before {
+    background-image: url('https://icon-icons.com/icons2/2985/PNG/512/key_password_icon_187140.png'); /* Icono de contraseña */
+}
