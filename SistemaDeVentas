@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Ventas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #ddd;
+        }
+        form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input, button {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Ventas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody id="productTable">
+            <!-- Aquí aparecerán los productos -->
+        </tbody>
+    </table>
+    <form id="addProductForm">
+        <input type="text" id="productName" placeholder="Nombre del Producto" required>
+        <input type="number" id="productPrice" placeholder="Precio" required>
+        <input type="number" id="productQuantity" placeholder="Cantidad" required>
+        <button type="submit">Agregar Producto</button>
+    </form>
+    <script>
+        const form = document.getElementById("addProductForm");
+        const tableBody = document.getElementById("productTable");
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById("productName").value;
+            const price = document.getElementById("productPrice").value;
+            const quantity = document.getElementById("productQuantity").value;
+
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                <td>${name}</td>
+                <td>${price}</td>
+                <td>${quantity}</td>
+            `;
+            tableBody.appendChild(newRow);
+
+            form.reset();
+        });
+    </script>
+</body>
+</html>
